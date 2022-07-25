@@ -122,8 +122,10 @@ export default {
           this.loading = true
           this.$store.dispatch('user/login', this.loginForm).then(() => {
             this.$router.push({ path: this.redirect || '/' })
+
             this.loading = false
           }).catch(() => {
+            // this.$message.error(err.message)
             this.loading = false
           })
         } else {
