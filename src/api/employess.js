@@ -61,3 +61,23 @@ export function updatePersonal (data) {
     data
   })
 }
+/** **
+ * 获取用户的岗位信息
+ *
+ * ****/
+export function getJobDetail (id) {
+  return request({
+    url: `/employees/${id}/jobs`
+  })
+}
+
+/**
+ * 保存岗位信息
+ * ****/
+export function updateJob (data) {
+  return request({
+    url: `/employees/${data.userId}/jobs`,
+    method: 'put',
+    data
+  })
+}
